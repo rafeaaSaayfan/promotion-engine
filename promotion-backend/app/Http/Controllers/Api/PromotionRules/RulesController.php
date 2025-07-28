@@ -43,7 +43,7 @@ class RulesController extends Controller
 
         $rule = Rule::create($data);
 
-        return response()->json($rule, 201);
+        return response()->json(['message' => 'Rule created successfully']);
     }
 
     /**
@@ -81,7 +81,7 @@ class RulesController extends Controller
 
         $rule->update($data);
 
-        return response()->json($rule);
+        return response()->json(['message' => 'Rule updated successfully']);
     }
 
     /**
