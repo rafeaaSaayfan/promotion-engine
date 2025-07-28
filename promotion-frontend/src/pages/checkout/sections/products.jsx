@@ -42,7 +42,13 @@ export default function Products({ selectedProductId, setSelectedProductId, sele
                     type="number"
                     value={quantity}
                     placeholder="quantity"
-                    onChange={(e) => setQuantity(e.target.value)}
+                    min={1}
+                    onChange={(e) => {
+                        const val = e.target.value;
+                        if (val === "" || Number(val) > 0) {
+                            setQuantity(val);
+                        }
+                    }}
                 />
             </div>
 
