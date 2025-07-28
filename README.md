@@ -6,7 +6,6 @@ This project demonstrates a flexible, structured, and scalable **promotion engin
 
 It supports structured conditions and actions for rule evaluation, enabling dynamic discounts based on customer or product attributes during checkout.
 
-========
 
 ## Technical Stack
 
@@ -20,7 +19,6 @@ It supports structured conditions and actions for rule evaluation, enabling dyna
 -------------------------------------------------------------------
 💡 **Attention:** The `json-rules-engine` works with the React checkout page, but the **custom PHP rule engine** is currently testable only via **Postman**.
 
-========
 
 ## Architecture
 
@@ -42,7 +40,6 @@ It supports structured conditions and actions for rule evaluation, enabling dyna
   - Applies condition-action logic.
   - Supports `salience` (priority) and `stackable` flags.
 
-========
 
 ## Dual Rule Engine Strategy
 
@@ -61,7 +58,6 @@ It supports structured conditions and actions for rule evaluation, enabling dyna
   - `salience` ordering (lower runs first).
   - `stackable` control (to stop or continue evaluating rules).
 
-========
 
 ## Data Entities
 
@@ -72,17 +68,25 @@ It supports structured conditions and actions for rule evaluation, enabling dyna
 
 Rules are stored in a **language-agnostic JSON format** that is parsed and processed in PHP.
 
-========
 
 ## System Architecture Diagram
 
-```mermaid
 graph TD
-  A[React Frontend (Vite)] -- REST API --> B[Laravel API]
-  B -- GET/POST --> C[MySQL Database]
-  B --> D[Custom PHP Rule Engine]
-  A --> E[json-rules-engine]
-  subgraph Rule Evaluation
-    E
-    D
-  end
+  %% Frontend
+  A[React Frontend (Vite)] 
+
+  %% Backend
+  B[Laravel API]
+
+  %% Database
+  C[MySQL Database]
+
+  %% Rule Engine (Client-side)
+  E[json-rules-engine (React)]
+
+  %% Relations
+  A -->|REST API: fetch data| B
+  B -->|Reads data| C
+  A -->|Sends data to| E
+  E -->|Returns evaluation result| A
+
