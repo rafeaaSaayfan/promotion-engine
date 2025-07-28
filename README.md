@@ -71,6 +71,7 @@ Rules are stored in a **language-agnostic JSON format** that is parsed and proce
 
 ## System Architecture Diagram
 
+```mermaid
 graph TD
   %% Frontend
   A[React Frontend (Vite)]
