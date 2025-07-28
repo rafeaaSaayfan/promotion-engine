@@ -50,6 +50,12 @@ It supports structured conditions and actions for rule evaluation, enabling dyna
 
 - Used in the React frontend.
 - Useful for building rule UIs and validating structures.
+- Accepts `line` and `customer` context.
+- Evaluates structured condition JSON.
+- Executes structured actions like `applyPercent`, `applyFreeUnits`.
+- Enforces:
+  - `salience` ordering (lower runs first).
+  - `stackable` control (to stop or continue evaluating rules).
 
 ### . Custom PHP Rule Engine (Backend)
 
