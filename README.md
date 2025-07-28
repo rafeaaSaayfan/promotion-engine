@@ -17,7 +17,7 @@ It supports structured conditions and actions for rule evaluation, enabling dyna
 | Frontend   | React (Vite) + Tailwind CSS                        |
 | Rule Logic | `json-rules-engine` (Frontend)                     |
 |            | Created my own custom PHP Rule Engine (Backend)    |
--------------------------------------------------------------------
+
 💡 **Attention:** The `json-rules-engine` works with the React checkout page, but the **custom PHP rule engine** is currently testable only via **Postman**.
 
 ---
