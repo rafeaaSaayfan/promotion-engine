@@ -71,25 +71,28 @@ Rules are stored in a **language-agnostic JSON format** that is parsed and proce
 
 ## System Architecture Diagram
 
-```mermaid
-graph TD
-  %% Frontend
-  A[React Frontend (Vite)]
-
-  %% Backend
-  B[Laravel API]
-
-  %% Database
-  C[MySQL Database]
-
-  %% Rule Engine (Client-side)
-  E[json-rules-engine (React)]
-
-  %% Relations
-  A -->|REST API: fetch data| B
-  B -->|Reads data| C
-  A -->|Sends data to| E
-  E -->|Returns evaluation result| A
++----------------+       REST API (Data Fetch)       +---------------------+
+|   React App    | <-------------------------------- |    Laravel API      |
+| (Checkout Page)|                                   |  (API Controller)   |
++----------------+                                   +----------+----------+
+        |                                                       |
+        |                                                       | Database Queries
+        |                                                       v
+        |                                             +---------------------+
+        |                                             | Database (MySQL)    |
+        |                                             | (Categories, Products,|
+        |                                             | Customers, Rules)   |
+        |                                             +---------------------+
+        |
+        | (Local Rule Evaluation)
+        v
++---------------------+
+|  json-rule (JS Pkg) |
+| (Frontend Engine)   |
++---------------------+
+        |
+        v
+(Final Result Display)
 
 
 
