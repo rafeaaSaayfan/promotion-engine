@@ -73,7 +73,6 @@ Rules are stored in a **language-agnostic JSON format** that is parsed and proce
 
 flowchart LR
 
-```mermaid
 graph TD
   A[React Frontend (Vite)]
   B[Laravel API]
