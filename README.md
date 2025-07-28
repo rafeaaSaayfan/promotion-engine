@@ -71,28 +71,12 @@ Rules are stored in a **language-agnostic JSON format** that is parsed and proce
 
 ## System Architecture Diagram
 
-+----------------+       REST API (Data Fetch)       +---------------------+
-|   React App    | <-------------------------------- |    Laravel API      |
-| (Checkout Page)|                                   |  (API Controller)   |
-+----------------+                                   +----------+----------+
-        |                                                       |
-        |                                                       | Database Queries
-        |                                                       v
-        |                                             +---------------------+
-        |                                             | Database (MySQL)    |
-        |                                             | (Categories, Products,|
-        |                                             | Customers, Rules)   |
-        |                                             +---------------------+
-        |
-        | (Local Rule Evaluation)
-        v
-+---------------------+
-|  json-rule (JS Pkg) |
-| (Frontend Engine)   |
-+---------------------+
-        |
-        v
-(Final Result Display)
+flowchart LR
+
+A[Hard] -->|Text| B(Round)
+B --> C{Decision}
+C -->|One| D[Result 1]
+C -->|Two| E[Result 2]
 
 
 
