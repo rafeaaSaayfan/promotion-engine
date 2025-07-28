@@ -71,11 +71,13 @@ Rules are stored in a **language-agnostic JSON format** that is parsed and proce
 
 ## System Architecture Diagram
 
+```mermaid
 flowchart TD
     A[React Frontend - Vite] -->|REST API: fetch data| B[Laravel API]
     B -->|Reads data| C[MySQL Database]
     A -->|Sends data to| E[json-rules-engine - React]
     E -->|Returns evaluation result| A
+
 
 
 
