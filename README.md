@@ -73,7 +73,7 @@ Rules are stored in a **language-agnostic JSON format** that is parsed and proce
 
 graph TD
   %% Frontend
-  A[React Frontend (Vite)] 
+  A[React Frontend (Vite)]
 
   %% Backend
   B[Laravel API]
@@ -89,4 +89,5 @@ graph TD
   B -->|Reads data| C
   A -->|Sends data to| E
   E -->|Returns evaluation result| A
+
 
