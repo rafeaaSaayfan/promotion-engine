@@ -30,6 +30,7 @@ It supports structured conditions and actions for rule evaluation, enabling dyna
 
 - **MySQL Database** stores:
   - `products`, `categories`, `customers`, and `rules` in structured JSON.
+  - Seeder for each table.
 
 - **Custom PHP Rule Engine**:
   - Parses JSON rule definitions.
