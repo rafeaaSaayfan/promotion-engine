@@ -73,10 +73,17 @@ Rules are stored in a **language-agnostic JSON format** that is parsed and proce
 
 flowchart LR
 
-A[Hard] -->|Text| B(Round)
-B --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
+```mermaid
+graph TD
+  A[React Frontend (Vite)]
+  B[Laravel API]
+  C[MySQL Database]
+  E[json-rules-engine (React)]
+
+  A -->|REST API: fetch data| B
+  B -->|Reads data| C
+  A -->|Sends data to| E
+  E -->|Returns evaluation result| A
 
 
 
