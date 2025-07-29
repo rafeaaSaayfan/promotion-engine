@@ -9,7 +9,7 @@ export default function Customers({ selectedId, setSelectedId, selectedCustomer,
     useEffect(() => {
         async function fetchCustomers() {
             try {
-                const res = await axios.get("http://localhost:8000/api/customers");
+                const res = await axios.get("https://promotion-engine-production.up.railway.app/api/customers");
                 setCustomers(res.data);
             } catch (err) {
                 console.error("Error fetching customers:", err);

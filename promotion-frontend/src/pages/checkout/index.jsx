@@ -20,7 +20,9 @@ export default function Checkout() {
     useEffect(() => {
         const fetchRules = async () => {
             try {
-                const res = await axios.get("http://localhost:8000/api/rules");
+                // const res = await axios.get("http://localhost:8000/api/rules");
+                const res = await axios.get("https://promotion-engine-production.up.railway.app/api/rules");
+                
                 setRules(res.data);
             } catch (err) {
                 alert("Error fetching rules");

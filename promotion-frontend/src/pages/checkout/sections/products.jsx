@@ -9,7 +9,7 @@ export default function Products({ selectedProductId, setSelectedProductId, sele
     useEffect(() => {
         async function fetchCustomers() {
             try {
-                const res = await axios.get("http://localhost:8000/api/products");
+                const res = await axios.get("https://promotion-engine-production.up.railway.app/api/products");
                 setProducts(res.data);
 
             } catch (err) {
