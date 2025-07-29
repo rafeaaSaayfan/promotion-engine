@@ -6,6 +6,11 @@ import { Engine } from "json-rules-engine";
  * @returns Promise<{ totalDiscount: number, appliedRules: Array }>
  */
 export async function evaluateRules(rulesFromApi, facts) {
+  if (facts.line.quantity > 100 || facts.line.quantity < 1) {
+    alert("Quantity must be between 1 and 100.");
+    return;
+  }
+  
   const engine = new Engine();
   const appliedRules = [];
   let totalDiscount = 0;

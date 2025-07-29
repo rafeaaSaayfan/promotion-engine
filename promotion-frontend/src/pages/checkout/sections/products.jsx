@@ -43,6 +43,7 @@ export default function Products({ selectedProductId, setSelectedProductId, sele
                     value={quantity}
                     placeholder="quantity"
                     min={1}
+                    max={100}
                     onChange={(e) => {
                         const val = e.target.value;
                         if (val === "" || Number(val) > 0) {
