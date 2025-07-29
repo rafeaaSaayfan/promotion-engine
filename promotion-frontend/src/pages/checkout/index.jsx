@@ -57,7 +57,7 @@ export default function Checkout() {
             setResult({
                 applied: evaluationResult.appliedRules.map(r => ({
                     ruleId: r.ruleId,
-                    discount: r.discount,
+                    discount: Number(r.discount).toFixed(2),
                     ruleName: r.ruleName,
                 })),
                 totalDiscount: Number(evaluationResult.totalDiscount).toFixed(2),
